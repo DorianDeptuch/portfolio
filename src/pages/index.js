@@ -6,15 +6,20 @@ import About from "../components/About"
 import Specialties from "../components/Specialties"
 import Projects from "../components/Projects"
 import Contact from "../components/Contact"
+import { BACKGROUND, PRIMARY, SECONDARY } from "../config/config"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <Hero />
     <About />
-    <Specialties />
-    <Projects />
-    {/* <Contact /> */}
+    {/* <Specialties /> */}
+    <div style={{ backgroundColor: PRIMARY }}>
+      <Projects />
+    </div>
+    <div style={{ backgroundColor: BACKGROUND }}>
+      <Contact />
+    </div>
   </Layout>
 )
 

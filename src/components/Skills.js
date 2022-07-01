@@ -2,6 +2,16 @@ import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
+const StyledContainer = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+  font-family: "Poppins", sans-serif;
+
+  h3 {
+    color: hsl(184, 74%, 44%);
+    font-size: 2rem;
+  }
+`
+
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -32,7 +42,7 @@ export default function Skills() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div>
+    <StyledContainer>
       <h3>My Skills</h3>
       <StyledDiv>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -118,6 +128,6 @@ export default function Skills() {
           </div>
         </div>
       )}
-    </div>
+    </StyledContainer>
   )
 }

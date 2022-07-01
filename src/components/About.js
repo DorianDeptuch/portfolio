@@ -1,29 +1,43 @@
 import React from "react"
 import styled from "styled-components"
 import WaveSVG from "./WaveSVG"
-import SquareSVG from "./SquareSVG"
-import { StaticImage } from "gatsby-plugin-image"
 import Skills from "./Skills"
+import Portrait from "./Portrait"
+import { BACKGROUND } from "../config/config"
 
 const StyledSection = styled.section`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
   font-family: "Poppins", sans-serif;
+  margin-top: 20rem;
+  margin-bottom: -20rem;
+  color: #07093f;
 `
 
 const StyledHeading = styled.h1`
-  text-align: "center";
-  font-size: "3rem";
-  background: "hsl(184, 74%, 44%)";
-  margin: 0;
-  padding-bottom: "4rem";
+  text-align: center;
+  font-size: 3rem;
+  background: hsl(184, 74%, 44%);
+  margin: 2rem 0 0 0;
+  padding-bottom: 4rem;
 `
 
 const StyledDiv = styled.div`
-  display: "flex";
-  flex-direction: "row";
-  width: "100%";
-  background: "hsl(184, 74%, 44%)";
-  padding: "0 3rem 10rem 3rem";
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: hsl(184, 74%, 44%);
+  background-color: "#07093f";
+  padding: 0 3rem 10rem 3rem;
+
+  p {
+    color: hsl(184, 74%, 44%);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+`
+
+const StyledContainer = styled.div`
+  margin-top: -2rem;
 `
 
 export default function About() {
@@ -32,56 +46,33 @@ export default function About() {
   return (
     <StyledSection>
       <WaveSVG bg={BG_COLOR} />
-      <div style={{ marginTop: "-2rem" }}>
-        {/* <StyledHeading>About Me</StyledHeading> */}
-        <h1
-          style={{
-            textAlign: "center",
-            fontSize: "3rem",
-            background: "hsl(184, 74%, 44%)",
-            margin: 0,
-            paddingBottom: "4rem",
-          }}
-        >
-          About Me
-        </h1>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "100%",
-            background: "hsl(184, 74%, 44%)",
-            padding: "3rem 3rem",
-          }}
-        >
-          <div style={{ width: "50%" }}>
-            <p>
-              I have been working on this website for a few years and I have
-              been working on this website for a few years and I have been
-              working on this website for a few years and I have been working on
-              this website for a few years and I have been working on this
-              website for a few years and I have been working on this website
-              for a few years
-            </p>
-            <Skills />
+      <StyledContainer>
+        <StyledHeading>About Me</StyledHeading>
+        <StyledDiv>
+          <div
+            style={{
+              backgroundColor: "#07093f",
+              display: "flex",
+              flexDirection: "row",
+              borderRadius: "5px",
+            }}
+          >
+            <div style={{ width: "100%", padding: "2rem" }}>
+              <p>
+                I have been working on this website for a few years and I have
+                been working on this website for a few years and I have been
+                working on this website for a few years and I have been working
+                on this website for a few years and I have been working on this
+                website for a few years and I have been working on this website
+                for a few years
+              </p>
+              <Skills />
+            </div>
+            <Portrait />
           </div>
-          <div style={{ width: "50%" }}>
-            {/* <SquareSVG /> */}
-            <StaticImage
-              style={{ margin: "2rem", width: "100%" }}
-              //   src="https://media-exp1.licdn.com/dms/image/C5603AQGEIGT_T1fCAA/profile-displayphoto-shrink_200_200/0/1634179963810?e=1659571200&v=beta&t=63uXmgT7FaF7K-98WS8SpcuPuoR9mC_xdH4kn2xuG2o"
-              src="../../public/static/Dorian-photo.jpeg"
-              alt="self"
-            />
-          </div>
-        </div>
-      </div>
-      {/* <div
-        style={{
-          background: "linear-gradient(180deg, #1db8c3 0%, #07093f 100%)",
-          height: "10rem",
-        }}
-      ></div> */}
+        </StyledDiv>
+      </StyledContainer>
+      <div style={{ paddingBottom: "20rem", marginBottom: "-20rem" }}></div>
     </StyledSection>
   )
 }
