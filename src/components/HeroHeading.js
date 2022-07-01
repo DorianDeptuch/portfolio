@@ -1,5 +1,18 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import DorianDeptuch from "./DorianDeptuch"
+
+const fadeInAnimation = keyframes`
+    from {
+        opacity: 0;
+        transform: translate(-50%, -70%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%, -50%);
+    }
+
+`
 
 const StyledHeading = styled.div`
   position: absolute;
@@ -10,11 +23,13 @@ const StyledHeading = styled.div`
   background: inherit;
   padding: 3rem 5rem;
   background-color: rgba(255, 255, 255, 0.15);
+  ${"" /* background-color: black; */}
   backdrop-filter: blur(10px);
   color: black;
   border-radius: 5px;
   width: 70%;
   font-size: 2rem;
+  animation: ${fadeInAnimation} 2s forwards ease;
 
   &:before {
     content: "";
@@ -28,28 +43,21 @@ const StyledHeading = styled.div`
     background: inherit;
   }
 `
-const name = {
-  //   background: "linear-gradient(hsl(184, 74%, 44%), hsl(332, 87%, 70%))",
-  background: "linearGradient(red, blue)",
-  backgroundClip: "text",
-  color: "red",
-}
 
 export default function HeroHeading() {
   return (
     <StyledHeading>
-      <h1 className="title">
-        Hello{" "}
-        <span role="img" aria-label="emoji">
-          👋
-        </span>
-        <br />
-        <span style={{ color: "red !important" }}>I'm Dorian Deptuch</span>
-      </h1>
-      <h2 className="subtitle">
-        I design and build{" "}
-        <span className="highlighted">things for the web</span>.
-      </h2>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <h1
+          className="title"
+          style={{ display: "inline-block", position: "relative" }}
+        >
+          Hello, I'm
+        </h1>
+        <div style={{ width: "100%" }}>
+          <DorianDeptuch />
+        </div>
+      </div>
       <div className="description">
         Full-Stack Web Developer. Based in San Diego, CA.
       </div>

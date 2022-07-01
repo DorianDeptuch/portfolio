@@ -1,5 +1,23 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+const rotateCWAnimation = keyframes`
+    from {
+        transform: rotateZ(0deg)
+    }
+    to {
+        transform: rotateZ(360deg)
+    }
+`
+
+const rotateCCWAnimation = keyframes`
+    from {
+        transform: rotateZ(0deg)
+    }
+    to {
+        transform: rotateZ(-360deg)
+    }
+`
 
 const StyledDiv = styled.div`
   //   position: absolute;
@@ -7,6 +25,24 @@ const StyledDiv = styled.div`
   //   left: 50%;
   background-attachment: fixed;
   margin: 3rem;
+
+  ${
+    "" /* circle:nth-child(2),
+  circle:nth-child(4),
+  circle:nth-child(6),
+  circle:nth-child(8) {
+    animation: ${rotateCWAnimation} 60s infinite linear;
+    transform-origin: center;
+  }
+
+  circle:nth-child(1),
+  circle:nth-child(3),
+  circle:nth-child(5),
+  circle:nth-child(7) {
+    animation: ${rotateCCWAnimation} 60s infinite linear;
+    transform-origin: center;
+  } */
+  }
 `
 
 export default function HeroSVG() {

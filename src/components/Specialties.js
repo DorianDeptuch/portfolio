@@ -1,10 +1,6 @@
 import React from "react"
-import SpecialtiesWaveSVG from "./SpecialtiesWaveSVG"
+import DorianDeptuch from "./DorianDeptuch"
 
 export default function () {
-  return (
-    <section>
-      <SpecialtiesWaveSVG />
-    </section>
-  )
+  return <section></section>
 }
