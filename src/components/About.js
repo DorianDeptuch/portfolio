@@ -3,6 +3,7 @@ import styled from "styled-components"
 import WaveSVG from "./WaveSVG"
 import Skills from "./Skills"
 import Portrait from "./Portrait"
+import FullSkills from "./FullSkills"
 import { BACKGROUND } from "../config/config"
 
 const StyledSection = styled.section`
@@ -52,23 +53,25 @@ export default function About() {
           <div
             style={{
               backgroundColor: "#07093f",
-              display: "flex",
-              flexDirection: "row",
+
               borderRadius: "5px",
             }}
           >
-            <div style={{ width: "100%", padding: "2rem" }}>
-              <p>
-                I have been working on this website for a few years and I have
-                been working on this website for a few years and I have been
-                working on this website for a few years and I have been working
-                on this website for a few years and I have been working on this
-                website for a few years and I have been working on this website
-                for a few years
-              </p>
-              <Skills />
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <div style={{ width: "100%", padding: "2rem" }}>
+                <p>
+                  I have been working on this website for a few years and I have
+                  been working on this website for a few years and I have been
+                  working on this website for a few years and I have been
+                  working on this website for a few years and I have been
+                  working on this website for a few years and I have been
+                  working on this website for a few years
+                </p>
+                <Skills />
+              </div>
+              <Portrait />
             </div>
-            <Portrait />
+            <FullSkills />
           </div>
         </StyledDiv>
       </StyledContainer>

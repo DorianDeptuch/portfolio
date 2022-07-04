@@ -26,8 +26,7 @@ const StyledDiv = styled.div`
   background-attachment: fixed;
   margin: 3rem;
 
-  ${
-    "" /* circle:nth-child(2),
+  circle:nth-child(2),
   circle:nth-child(4),
   circle:nth-child(6),
   circle:nth-child(8) {
@@ -41,7 +40,7 @@ const StyledDiv = styled.div`
   circle:nth-child(7) {
     animation: ${rotateCCWAnimation} 60s infinite linear;
     transform-origin: center;
-  } */
+  } 
   }
 `
 
