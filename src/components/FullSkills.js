@@ -17,8 +17,16 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 5px;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 70%;
+    transform: scale(1.05);
+  }
 `
 
 const StyledDiv = styled.div`
@@ -93,6 +101,13 @@ const StyledListContainer = styled.div`
   svg,
   path {
     fill: hsl(184, 74%, 44%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  svg:hover {
+    cursor: pointer;
+    opacity: 70%;
+    transform: scale(1.05);
   }
 `
 

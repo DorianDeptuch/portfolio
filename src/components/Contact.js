@@ -1,16 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import WaveSVG from "./WaveSVG"
-import Skills from "./Skills"
-import Portrait from "./Portrait"
-import { BACKGROUND, PRIMARY } from "../config/config"
+import { PRIMARY } from "../config/config"
+import ContactIcons from "./ContactIcons"
 
 const StyledSection = styled.section`
   color: #07093f;
 `
 
 const StyledContainer = styled.div`
-  margin-top: -2rem;
+  margin-top: -2.1rem;
 `
 
 const StyledHeading = styled.h1`
@@ -38,7 +37,17 @@ export default function Contact() {
       <WaveSVG bg={BG_COLOR} />
       <StyledContainer>
         <StyledHeading>Contact Me</StyledHeading>
-        <StyledDiv></StyledDiv>
+        <StyledDiv>
+          <div
+            style={{
+              backgroundColor: "#07093f",
+              width: "100%",
+              borderRadius: "5px",
+            }}
+          >
+            <ContactIcons />
+          </div>
+        </StyledDiv>
       </StyledContainer>
     </StyledSection>
   )

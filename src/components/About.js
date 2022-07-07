@@ -60,12 +60,9 @@ export default function About() {
             <div style={{ display: "flex", flexDirection: "row" }}>
               <div style={{ width: "100%", padding: "2rem" }}>
                 <p>
-                  I have been working on this website for a few years and I have
-                  been working on this website for a few years and I have been
-                  working on this website for a few years and I have been
-                  working on this website for a few years and I have been
-                  working on this website for a few years and I have been
-                  working on this website for a few years
+                  What happens when an outdoor-loving climber takes his problem
+                  solving skills and puts them to use in the realm of Computer
+                  Science? Scroll to find out!
                 </p>
                 <Skills />
               </div>

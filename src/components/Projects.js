@@ -35,7 +35,9 @@ export default function Projects() {
 
       <div style={{ marginTop: "-2rem" }}>
         <StyledHeading>Featured Projects</StyledHeading>
-        <StyledDiv>{/* <Carousel /> */}</StyledDiv>
+        <StyledDiv>
+          <Carousel />
+        </StyledDiv>
       </div>
     </StyledSection>
   )

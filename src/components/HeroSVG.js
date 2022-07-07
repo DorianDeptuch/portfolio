@@ -30,7 +30,7 @@ const StyledDiv = styled.div`
   circle:nth-child(4),
   circle:nth-child(6),
   circle:nth-child(8) {
-    animation: ${rotateCWAnimation} 60s infinite linear;
+    animation: ${rotateCWAnimation} 60s infinite linear 6s;
     transform-origin: center;
   }
 
@@ -38,7 +38,7 @@ const StyledDiv = styled.div`
   circle:nth-child(3),
   circle:nth-child(5),
   circle:nth-child(7) {
-    animation: ${rotateCCWAnimation} 60s infinite linear;
+    animation: ${rotateCCWAnimation} 60s infinite linear 6s;
     transform-origin: center;
   } 
   }

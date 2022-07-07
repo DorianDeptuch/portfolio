@@ -23,13 +23,17 @@ const StyledHeading = styled.div`
   background: inherit;
   padding: 3rem 5rem;
   background-color: rgba(255, 255, 255, 0.15);
-  ${"" /* background-color: black; */}
   backdrop-filter: blur(10px);
   color: black;
   border-radius: 5px;
   width: 70%;
   font-size: 2rem;
   animation: ${fadeInAnimation} 2s forwards ease;
+
+  h1,
+  p {
+    color: #07093f;
+  }
 
   &:before {
     content: "";
@@ -58,9 +62,7 @@ export default function HeroHeading() {
           <DorianDeptuch />
         </div>
       </div>
-      <div className="description">
-        Full-Stack Web Developer. Based in San Diego, CA.
-      </div>
+      <p>Full-Stack Web Developer. Based in San Diego, CA.</p>
     </StyledHeading>
   )
 }
