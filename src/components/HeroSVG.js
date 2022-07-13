@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
+import { device } from "../config/config"
 
 const rotateCWAnimation = keyframes`
     from {
@@ -20,9 +21,7 @@ const rotateCCWAnimation = keyframes`
 `
 
 const StyledDiv = styled.div`
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
+
   background-attachment: fixed;
   margin: 3rem;
 
@@ -41,6 +40,10 @@ const StyledDiv = styled.div`
     animation: ${rotateCCWAnimation} 60s infinite linear 6s;
     transform-origin: center;
   } 
+  }
+
+  @media only screen and ${device.tablet} {
+    margin: 1rem 1rem 0 1rem;
   }
 `
 

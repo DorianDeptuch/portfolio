@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled, { keyframes } from "styled-components"
+import { device } from "../config/config"
 
 const textAnimation = keyframes`
 to {
@@ -13,6 +14,22 @@ const shadowAnimation = keyframes`
   }
   to {
     filter: drop-shadow(5px 5px #000);
+  }
+`
+const shadowAnimationTablet = keyframes`
+  from {
+    filter: none;
+  }
+  to {
+    filter: drop-shadow(3px 3px #000);
+  }
+`
+const shadowAnimationMobile = keyframes`
+  from {
+    filter: none;
+  }
+  to {
+    filter: drop-shadow(1px 1px #000);
   }
 `
 const fillAnimation = keyframes`
@@ -102,6 +119,19 @@ const StyledDiv = styled.div`
     stroke-dasharray: 475;
     stroke-dashoffset: 475;
     animation: ${textAnimation} 2s ease forwards 3.2s;
+  }
+
+  @media only screen and ${device.tablet} {
+    margin-top: 0.5rem;
+    svg {
+      animation: ${shadowAnimationTablet} 0.5s ease forwards 5.5s;
+    }
+  }
+  @media only screen and ${device.mobile} {
+    margin-top: 0;
+    svg {
+      animation: ${shadowAnimationMobile} 0.5s ease forwards 5.5s;
+    }
   }
 `
 

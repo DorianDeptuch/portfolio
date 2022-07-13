@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import DorianDeptuch from "./DorianDeptuch"
+import { device } from "../config/config"
 
 const fadeInAnimation = keyframes`
     from {
@@ -31,8 +32,12 @@ const StyledHeading = styled.div`
   animation: ${fadeInAnimation} 2s forwards ease;
 
   h1,
-  p {
-    color: #07093f;
+  h5 {
+    color: black;
+  }
+
+  h5 {
+    margin: 0;
   }
 
   &:before {
@@ -45,6 +50,39 @@ const StyledHeading = styled.div`
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
     filter: blur(10px);
     background: inherit;
+  }
+
+  @media only screen and ${device.tablet} {
+    padding: 2rem 3.5rem;
+
+    h1 {
+      font-size: 0.8em;
+    }
+    h5 {
+      font-size: 0.6em;
+    }
+  }
+  @media only screen and ${device.mobile} {
+    padding: 1rem 2rem;
+
+    h1 {
+      font-size: 0.5em;
+      color: ;
+    }
+    h5 {
+      font-size: 0.3em;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 1rem 2rem;
+
+    h1 {
+      font-size: 0.5em;
+      color: ;
+    }
+    h5 {
+      font-size: 0.3em;
+    }
   }
 `
 
@@ -61,8 +99,10 @@ export default function HeroHeading() {
         <div style={{ width: "100%" }}>
           <DorianDeptuch />
         </div>
+        <h5>
+          Full-Stack Web Developer. <wbr /> Based in San Diego, CA.
+        </h5>
       </div>
-      <p>Full-Stack Web Developer. Based in San Diego, CA.</p>
     </StyledHeading>
   )
 }

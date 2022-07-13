@@ -1,6 +1,6 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { device } from "../config/config"
 
 const StyledContainer = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
@@ -11,13 +11,20 @@ const StyledContainer = styled.div`
     font-size: 2rem;
     text-align: center;
   }
+
+  @media only screen and ${device.tablet} {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
 `
 
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80%;
   background: #07093e;
+  margin: 0 auto;
 
   svg {
     margin: 0 auto;
@@ -26,6 +33,13 @@ const StyledDiv = styled.div`
   svg,
   path {
     fill: hsl(184, 74%, 44%);
+  }
+
+  @media only screen and ${device.tablet} {
+    width: 65%;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 50%;
   }
 `
 

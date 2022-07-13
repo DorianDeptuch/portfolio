@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { device } from "../config/config"
 
 const StyledContainer = styled.div`
   display: flex;
@@ -23,6 +24,11 @@ const StyledContainer = styled.div`
     text-decoration: none;
     height: 5rem;
     display: inline-block;
+    width: 100%;
+  }
+
+  @media only screen and ${device.mobile} {
+    padding: 2rem 0;
   }
 `
 
@@ -31,6 +37,7 @@ const StyledDiv = styled.div`
   flex-direction: row;
   height: 5rem;
   align-items: center;
+  justify-content: center;
   transition: opacity 0.5s ease, transform 0.5s ease;
   margin: 1rem 0;
   width: 100%;
@@ -54,6 +61,35 @@ const StyledDiv = styled.div`
   path {
     fill: hsl(184, 74%, 44%);
     height: 100%;
+  }
+
+  @media only screen and ${device.tablet} {
+    & > * {
+      margin: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    svg,
+    path {
+      height: 70%;
+    }
+  }
+  @media only screen and ${device.mobile} {
+    & > * {
+      margin: 0.25rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
+
+    svg,
+    path {
+      height: 50%;
+    }
   }
 `
 

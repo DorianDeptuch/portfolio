@@ -5,6 +5,7 @@ import Skills from "./Skills"
 import Portrait from "./Portrait"
 import FullSkills from "./FullSkills"
 import { BACKGROUND } from "../config/config"
+import { device } from "../config/config"
 
 const StyledSection = styled.section`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
@@ -35,6 +36,22 @@ const StyledDiv = styled.div`
     font-size: 1.5rem;
     font-weight: bold;
   }
+
+  @media only screen and ${device.tablet} {
+    p {
+      font-size: 1rem;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 0 1rem 5rem 1rem;
+    .content {
+      flex-direction: column-reverse !important;
+    }
+    .left-side {
+      padding-top: 0 !important;
+      text-align: center;
+    }
+  }
 `
 
 const StyledContainer = styled.div`
@@ -57,8 +74,14 @@ export default function About() {
               borderRadius: "5px",
             }}
           >
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              <div style={{ width: "100%", padding: "2rem" }}>
+            <div
+              className="content"
+              style={{ display: "flex", flexDirection: "row" }}
+            >
+              <div
+                className="left-side"
+                style={{ width: "100%", padding: "2rem" }}
+              >
                 <p>
                   What happens when an outdoor-loving climber takes his problem
                   solving skills and puts them to use in the realm of Computer

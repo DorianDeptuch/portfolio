@@ -3,6 +3,7 @@ import styled from "styled-components"
 import WaveSVG from "./WaveSVG"
 import { PRIMARY } from "../config/config"
 import ContactIcons from "./ContactIcons"
+import { device } from "../config/config"
 
 const StyledSection = styled.section`
   color: #07093f;
@@ -28,6 +29,10 @@ const StyledDiv = styled.div`
   background-color: "#07093f";
 
   padding: 0 3rem 10rem 3rem;
+
+  @media only screen and ${device.tablet} {
+    padding: 0 1rem 10rem 1rem;
+  }
 `
 
 export default function Contact() {

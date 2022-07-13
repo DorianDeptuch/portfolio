@@ -1,6 +1,5 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import SquareSVG from "./SquareSVG"
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledDiv = styled.div`

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
+import { device } from "../config/config"
 
 const FadeInAnimation = keyframes`
 from {
@@ -11,7 +12,7 @@ to {
 `
 
 const StyledButton = styled.button`
-  margin-bottom: 2rem;
+  ${"" /* margin-bottom: 2rem; */}
   background-color: hsl(184, 74%, 44%);
   color: #07093f;
   border: none;
@@ -26,6 +27,11 @@ const StyledButton = styled.button`
     cursor: pointer;
     opacity: 70%;
     transform: scale(1.05);
+  }
+
+  @media only screen and ${device.tablet} {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
 `
 
@@ -42,6 +48,7 @@ const StyledContainer = styled.div`
   flex-direction: row;
   width: 100%;
   animation: ${FadeInAnimation} 0.75s forwards linear;
+  margin-top: 2rem;
 
   .fe {
     margin-left: 2rem;
@@ -56,6 +63,22 @@ const StyledContainer = styled.div`
   .misc {
     margin-left: 1rem;
     margin-right: 2rem;
+  }
+  @media only screen and ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+    .fe,
+    .be,
+    .misc {
+      margin: 1rem;
+    }
+  }
+  ${
+    "" /* @media only screen and ${device.tablet} {
+    & > div {
+      margin: 0;
+    }
+  } */
   }
 `
 
@@ -82,7 +105,7 @@ const StyledListContainer = styled.div`
 
   li {
     text-align: center;
-    width: 25%;
+    width: 20%;
     margin: 1rem;
 
     div {
@@ -108,6 +131,20 @@ const StyledListContainer = styled.div`
     cursor: pointer;
     opacity: 70%;
     transform: scale(1.05);
+  }
+
+  @media only screen and ${device.latop} {
+    li {
+      width: 40%;
+    }
+  }
+  @media only screen and ${device.tablet} {
+    max-width: 100%;
+    width: 90%;
+    margin: 1rem;
+    li {
+      width: 10%;
+    }
   }
 `
 

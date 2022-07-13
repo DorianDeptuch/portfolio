@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import WaveSVG from "./WaveSVG"
-import SquareSVG from "./SquareSVG"
-import { StaticImage } from "gatsby-plugin-image"
 import Carousel from "./Carousel"
 import { BACKGROUND } from "../config/config"
 

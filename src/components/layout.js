@@ -1,24 +1,25 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import "./layout.css"
 
+const StyledFooter = styled.footer`
+  background-color: hsl(184, 74%, 44%);
+  color: #07093f;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: -0.5rem;
+`
+
 const StyledLayout = styled.div`
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  ${"" /* padding: 3rem; */}
   background-color: #06083e;
-
+  overflow-x: hidden;
   display: grid;
+  ${"" /* max-width: 1200px; */}
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
   #main-content {
@@ -43,11 +44,9 @@ const Layout = ({ children }) => {
   return (
     <StyledLayout>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()} &middot; Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      <StyledFooter>
+        © {new Date().getFullYear()} &middot; Dorian Deptuch
+      </StyledFooter>
     </StyledLayout>
   )
 }

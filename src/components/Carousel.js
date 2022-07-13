@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
+import { device } from "../config/config"
 
 const StyledContainer = styled.div`
   position: relative;
@@ -12,6 +12,13 @@ const StyledContainer = styled.div`
   border-radius: 5px;
   max-width: 50vw;
   max-height: 100vh;
+
+  @media only screen and ${device.laptop} {
+    max-width: 70vw;
+  }
+  @media only screen and ${device.tablet} {
+    max-width: 90vw;
+  }
 `
 
 const StyledDiv = styled.div`
@@ -69,6 +76,29 @@ const StyledDiv = styled.div`
     transition-duration: 1s;
     transform: scale(0.92);
   }
+  @media only screen and ${device.desktop} {
+    .right-arrow-tablet,
+    .left-arrow-tablet {
+      display: none;
+    }
+  }
+  @media only screen and ${device.tablet} {
+    justify-content: center;
+    .right-arrow,
+    .left-arrow {
+      display: none;
+    }
+    .right-arrow-tablet,
+    .left-arrow-tablet {
+      display: block;
+      font-size: 3rem;
+      width: 10%;
+      margin: auto;
+    }
+    .content {
+      width: 80%;
+    }
+  }
 `
 
 const StyledLinkContainer = styled.div`
@@ -112,6 +142,12 @@ const StyledLinkContainer = styled.div`
   p:hover {
     cursor: pointer;
   }
+
+  @media only screen and ${device.tablet} {
+    p {
+      font-size: 1rem;
+    }
+  }
 `
 
 const StyledTitleContainer = styled.div`
@@ -124,6 +160,7 @@ const StyledTitleContainer = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 5px;
+  width: 100%;
 
   h5 {
     font-size: 2rem;
@@ -139,18 +176,41 @@ const StyledTitleContainer = styled.div`
   & * {
     display: inline-block;
   }
+
+  @media only screen and ${device.tablet} {
+    disply: flex;
+
+    flex-direction: row;
+    h5 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  @media only screen and ${device.mobile} {
+    div:nth-child(2) {
+      padding: 0 0.5rem;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.75rem;
+    }
+  }
 `
 
 const SliderData = [
-  {
-    title: "Facebook Clone",
-    description:
-      "Built with NextJS, Express, and MongoDB. This Facebook clone features a comprehensive notification system and GIPHY and YouTube APIs to add some fun to the social media experience.",
-    image:
-      "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657053808/portfolio%20projects/PeekOdinBook-1_eutbql.gif",
-    codeURL: "https://github.com/DorianDeptuch/odin-book",
-    liveURL: "",
-  },
+  // {
+  //   title: "Facebook Clone",
+  //   description:
+  //     "Built with NextJS, Express, and MongoDB. This Facebook clone features a comprehensive notification system and GIPHY and YouTube APIs to add some fun to the social media experience.",
+  //   image:
+  //     "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657053808/portfolio%20projects/PeekOdinBook-1_eutbql.gif",
+  //   codeURL: "https://github.com/DorianDeptuch/odin-book",
+  //   liveURL: "",
+  // },
   {
     title: "Reddit Clone",
     description:
@@ -204,28 +264,6 @@ const SliderData = [
     liveURL: "https://doriandeptuch.github.io/embedding-images-and-video/",
   },
 ]
-// const SliderData = [
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1546768292-fb12f6c92568?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1501446529957-6226bd447c46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1475189778702-5ec9941484ae?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-//   },
-// ]
 
 const Carousel = () => {
   const [current, setCurrent] = useState(0)
@@ -260,8 +298,24 @@ const Carousel = () => {
                 <div>
                   <img src={slide.image} alt="slider.title" className="image" />
                   <StyledTitleContainer>
-                    <h5>{slide.title}</h5>
-                    <p>{slide.description}</p>
+                    <div
+                      style={{ display: "none" }}
+                      className="left-arrow-tablet"
+                      onClick={prevSlide}
+                    >
+                      &#10094;
+                    </div>
+                    <div className="content">
+                      <h5>{slide.title}</h5>
+                      <p>{slide.description}</p>
+                    </div>
+                    <div
+                      style={{ display: "none" }}
+                      className="left-arrow-tablet"
+                      onClick={prevSlide}
+                    >
+                      &#10095;
+                    </div>
                   </StyledTitleContainer>
                   <StyledLinkContainer>
                     <a href={slide.codeURL} target="_blank" rel="noreferrer">
