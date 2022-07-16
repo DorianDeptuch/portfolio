@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled, { keyframes } from "styled-components"
 import DorianDeptuch from "./DorianDeptuch"
 import { device } from "../config/config"
@@ -87,8 +87,17 @@ const StyledHeading = styled.div`
 `
 
 export default function HeroHeading() {
+  const headingRef = useRef(null)
+
+  useEffect(() => {
+    headingRef.current.scrollIntoView({
+      behavior: "auto",
+      block: "center",
+      inline: "center",
+    })
+  }, [])
   return (
-    <StyledHeading>
+    <StyledHeading ref={headingRef}>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <h1
           className="title"

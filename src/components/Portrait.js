@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledDiv = styled.div`
@@ -19,7 +19,7 @@ export default function Portrait() {
       {/* <SquareSVG /> */}
       <StaticImage
         style={{ margin: "2rem", width: "100%" }}
-        src="../../public/static/Dorian-photo.jpeg"
+        src="https://res.cloudinary.com/dsykkv6uh/image/upload/v1657952686/Dorian-photo_gflotg.jpg"
         alt="self"
       />
     </StyledDiv>

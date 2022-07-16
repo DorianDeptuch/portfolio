@@ -4,7 +4,6 @@ import WaveSVG from "./WaveSVG"
 import Skills from "./Skills"
 import Portrait from "./Portrait"
 import FullSkills from "./FullSkills"
-import { BACKGROUND } from "../config/config"
 import { device } from "../config/config"
 
 const StyledSection = styled.section`

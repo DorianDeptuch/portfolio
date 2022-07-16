@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { device } from "../config/config"
 
 const StyledContainer = styled.div`
@@ -269,6 +269,17 @@ const Carousel = () => {
   const [current, setCurrent] = useState(0)
   const length = SliderData.length
 
+  const handleKeyDown = e => {
+    if (e.keyCode === 37) {
+      prevSlide()
+    }
+    if (e.keyCode === 39) {
+      nextSlide()
+    } else {
+      return
+    }
+  }
+
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1)
   }
@@ -284,7 +295,13 @@ const Carousel = () => {
   return (
     <StyledContainer className="slider">
       <StyledDiv>
-        <div className="left-arrow" onClick={prevSlide}>
+        <div
+          className="left-arrow"
+          role="button"
+          tabIndex="0"
+          onClick={prevSlide}
+          onKeyDown={handleKeyDown}
+        >
           &#10094;
         </div>
 
@@ -301,7 +318,10 @@ const Carousel = () => {
                     <div
                       style={{ display: "none" }}
                       className="left-arrow-tablet"
+                      role="button"
+                      tabIndex="0"
                       onClick={prevSlide}
+                      onKeyDown={handleKeyDown}
                     >
                       &#10094;
                     </div>
@@ -312,7 +332,10 @@ const Carousel = () => {
                     <div
                       style={{ display: "none" }}
                       className="left-arrow-tablet"
+                      role="button"
+                      tabIndex="0"
                       onClick={prevSlide}
+                      onKeyDown={handleKeyDown}
                     >
                       &#10095;
                     </div>
@@ -334,7 +357,13 @@ const Carousel = () => {
             </div>
           )
         })}
-        <div className="right-arrow" onClick={nextSlide}>
+        <div
+          className="right-arrow"
+          role="button"
+          tabIndex="0"
+          onClick={nextSlide}
+          onKeyDown={handleKeyDown}
+        >
           &#10095;
         </div>
       </StyledDiv>
