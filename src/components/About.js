@@ -20,6 +20,10 @@ const StyledHeading = styled.h1`
   background: hsl(184, 74%, 44%);
   margin: 2rem 0 0 0;
   padding-bottom: 4rem;
+
+  @media only screen and ${device.tablet} {
+    padding-top: 4rem;
+  }
 `
 
 const StyledDiv = styled.div`

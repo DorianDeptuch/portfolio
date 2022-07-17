@@ -4,7 +4,6 @@ import { device } from "../config/config"
 
 const StyledContainer = styled.div`
   position: relative;
-  ${"" /* height: 100vh; */}
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,14 +27,17 @@ const StyledDiv = styled.div`
   height: 100%;
 
   .image {
-    ${"" /* width: 1000px; */}
-    ${"" /* height: 600px; */}
     border-radius: 10px;
-    height: 50%;
+    height: 100%;
     max-width: 100%;
+    ${"" /* max-height: 50%; */}
     margin: auto;
     margin-bottom: 1rem;
     display: block;
+  }
+
+  .contentContainer {
+    height: 100%;
   }
 
   .right-arrow,
@@ -81,6 +83,10 @@ const StyledDiv = styled.div`
     .left-arrow-tablet {
       display: none;
     }
+
+    .image {
+      max-height: 50vh;
+    }
   }
   @media only screen and ${device.tablet} {
     justify-content: center;
@@ -97,6 +103,15 @@ const StyledDiv = styled.div`
     }
     .content {
       width: 80%;
+    }
+    .image {
+      max-height: 40vh;
+    }
+  }
+
+  @media only screen and ${device.mobile} {
+    .image {
+      max-height: 40vh;
     }
   }
 `
@@ -178,14 +193,19 @@ const StyledTitleContainer = styled.div`
   }
 
   @media only screen and ${device.tablet} {
-    disply: flex;
-
+    display: flex;
     flex-direction: row;
+
     h5 {
       font-size: 1.5rem;
     }
     p {
       font-size: 1rem;
+    }
+
+    .left-arrow-tablet,
+    .right-arrow-tablet {
+      display: block !important;
     }
   }
   @media only screen and ${device.mobile} {
@@ -222,7 +242,7 @@ const SliderData = [
   },
   {
     title: "Shopping Cart SPA",
-    description: "A climbing-based shopping page that utilizes React router",
+    description: "A climbing-based shopping page that utilizes React router.",
     image:
       "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657153566/portfolio%20projects/STGShoppingCart-3_kw4vqw.gif",
     codeURL: "https://github.com/DorianDeptuch/Shopping-Cart",
@@ -231,7 +251,7 @@ const SliderData = [
   {
     title: "Where's Waldo Game",
     description:
-      "A fun twist on the classis Where's Waldo Game. There are now multiple objects to find in this iteration of the game",
+      "A fun twist on the classic Where's Waldo Game. There are now multiple objects to find in this iteration of the game.",
     image:
       "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657153565/portfolio%20projects/STGWheresWaldo-3_yb9tcd.gif",
     codeURL: "https://github.com/DorianDeptuch/wheres-waldo",
@@ -249,14 +269,14 @@ const SliderData = [
   {
     title: "The Next Web CSS Clone",
     description:
-      "Built with a mobile-first design philisophy using HTML and SCSS with an emphasis on responsive design",
+      "Built with a mobile-first design philisophy using HTML and SCSS with an emphasis on responsive design.",
     image:
       "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657153566/portfolio%20projects/STGTNWClone-2_g3q6en.gif",
     codeURL: "https://github.com/DorianDeptuch/the-next-web-clone",
     liveURL: "https://doriandeptuch.github.io/the-next-web-clone/",
   },
   {
-    title: "YouTube CSS Clone",
+    title: "YouTube CSS Clone.",
     description: "A 1:1 style clone of a YouTube video page",
     image:
       "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657153566/portfolio%20projects/STGYouTubeClone-3_zle2sb.gif",
@@ -314,44 +334,46 @@ const Carousel = () => {
               {index === current && (
                 <div>
                   <img src={slide.image} alt="slider.title" className="image" />
-                  <StyledTitleContainer>
-                    <div
-                      style={{ display: "none" }}
-                      className="left-arrow-tablet"
-                      role="button"
-                      tabIndex="0"
-                      onClick={prevSlide}
-                      onKeyDown={handleKeyDown}
-                    >
-                      &#10094;
-                    </div>
-                    <div className="content">
-                      <h5>{slide.title}</h5>
-                      <p>{slide.description}</p>
-                    </div>
-                    <div
-                      style={{ display: "none" }}
-                      className="left-arrow-tablet"
-                      role="button"
-                      tabIndex="0"
-                      onClick={prevSlide}
-                      onKeyDown={handleKeyDown}
-                    >
-                      &#10095;
-                    </div>
-                  </StyledTitleContainer>
-                  <StyledLinkContainer>
-                    <a href={slide.codeURL} target="_blank" rel="noreferrer">
-                      <button>
-                        <p>View Code</p>
-                      </button>
-                    </a>
-                    <a href={slide.liveURL} target="_blank" rel="noreferrer">
-                      <button>
-                        <p>View Demo</p>
-                      </button>
-                    </a>
-                  </StyledLinkContainer>
+                  <div className="contentContainer">
+                    <StyledTitleContainer>
+                      <div
+                        style={{ display: "none" }}
+                        className="left-arrow-tablet"
+                        role="button"
+                        tabIndex="0"
+                        onClick={prevSlide}
+                        onKeyDown={handleKeyDown}
+                      >
+                        &#10094;
+                      </div>
+                      <div className="content">
+                        <h5>{slide.title}</h5>
+                        <p>{slide.description}</p>
+                      </div>
+                      <div
+                        style={{ display: "none" }}
+                        className="left-arrow-tablet"
+                        role="button"
+                        tabIndex="0"
+                        onClick={prevSlide}
+                        onKeyDown={handleKeyDown}
+                      >
+                        &#10095;
+                      </div>
+                    </StyledTitleContainer>
+                    <StyledLinkContainer>
+                      <a href={slide.codeURL} target="_blank" rel="noreferrer">
+                        <button>
+                          <p>View Code</p>
+                        </button>
+                      </a>
+                      <a href={slide.liveURL} target="_blank" rel="noreferrer">
+                        <button>
+                          <p>View Demo</p>
+                        </button>
+                      </a>
+                    </StyledLinkContainer>
+                  </div>
                 </div>
               )}
             </div>

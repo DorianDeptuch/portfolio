@@ -3,6 +3,7 @@ import styled from "styled-components"
 import WaveSVG from "./WaveSVG"
 import Carousel from "./Carousel"
 import { BACKGROUND } from "../config/config"
+import { device } from "../config/config"
 
 const StyledSection = styled.section``
 
@@ -13,6 +14,10 @@ const StyledHeading = styled.h1`
   margin: 2rem 0 0 0;
   padding-bottom: 4rem;
   color: hsl(184, 74%, 44%);
+
+  @media only screen and ${device.tablet} {
+    padding-top: 4rem;
+  }
 `
 
 const StyledDiv = styled.div`
