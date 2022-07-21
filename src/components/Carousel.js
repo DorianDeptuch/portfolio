@@ -10,7 +10,7 @@ const StyledContainer = styled.div`
   background-color: hsl(184, 74%, 44%);
   border-radius: 5px;
   max-width: 50vw;
-  max-height: 100vh;
+  max-height: 100%;
 
   @media only screen and ${device.laptop} {
     max-width: 70vw;
@@ -332,7 +332,7 @@ const Carousel = () => {
               key={index}
             >
               {index === current && (
-                <div>
+                <div style={{ height: "auto" }}>
                   <img src={slide.image} alt="slider.title" className="image" />
                   <div className="contentContainer">
                     <StyledTitleContainer>
