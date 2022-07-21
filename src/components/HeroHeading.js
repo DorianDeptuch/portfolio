@@ -23,9 +23,9 @@ const StyledHeading = styled.div`
   transform: translate(-50%, -50%);
   background: inherit;
   padding: 3rem 5rem;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  color: black;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  ${"" /* color: black; */}
   border-radius: 5px;
   width: 70%;
   font-size: 2rem;
@@ -40,7 +40,8 @@ const StyledHeading = styled.div`
     margin: 0;
   }
 
-  &:before {
+  ${
+    "" /* &:before {
     content: "";
     position: absolute;
     top: 0;
@@ -50,6 +51,7 @@ const StyledHeading = styled.div`
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
     filter: blur(10px);
     background: inherit;
+  } */
   }
 
   @media only screen and ${device.tablet} {

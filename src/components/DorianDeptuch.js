@@ -58,7 +58,7 @@ const StyledDiv = styled.div`
   path:nth-child(1) {
     stroke-dasharray: 508;
     stroke-dashoffset: 508;
-    animation: ${textAnimation} 2s ease forwards;
+    animation: ${textAnimation} 2s ease forwards 2s;
   }
   path:nth-child(2) {
     stroke-dasharray: 503;

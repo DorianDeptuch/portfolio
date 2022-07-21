@@ -52,6 +52,8 @@ export default function Contact() {
               backgroundColor: "#07093f",
               width: "100%",
               borderRadius: "5px",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
             <ContactIcons />
