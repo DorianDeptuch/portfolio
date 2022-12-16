@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+<!-- AUTO-GENERATED-CONTENT:START (STARTER)
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
@@ -7,5 +7,9 @@
 <h1 align="center">
   Dorian's Portfolio Website
 </h1>
+-->
+
+# Dorian's Portfolio Website
+
 
 ## Live Preview: [https://doriandeptuch.github.io/portfolio/](https://doriandeptuch.github.io/portfolio/)
