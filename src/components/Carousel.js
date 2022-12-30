@@ -129,12 +129,13 @@ const StyledLinkContainer = styled.div`
     background: hsl(238, 80%, 14%);
     width: 100%;
     border-radius: 5px;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s, transform 0.5s;
   }
   a:hover {
     cursor: pointer;
     opacity: 70%;
     transform: scale(1.02);
+    transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
   }
   button {
     padding-top: 1rem;
