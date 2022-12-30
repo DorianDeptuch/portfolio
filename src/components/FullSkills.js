@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { device } from "../config/config"
+import resume from "../../static/Dorian_Deptuch_Resume_26-12-2022-20-33-26.pdf"
 
 const FadeInAnimation = keyframes`
 from {
@@ -21,7 +22,8 @@ const StyledButton = styled.button`
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s, transform 0.5s;
+  transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
 
   &:hover {
     cursor: pointer;
@@ -148,18 +150,29 @@ const StyledListContainer = styled.div`
   }
 `
 
+const StyledButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+`
+
 export default function FullSkills() {
   const [open, setOpen] = useState(false)
 
   return (
     <StyledDiv>
-      <StyledButton
-        onClick={() => {
-          setOpen(!open)
-        }}
-      >
-        {open ? "Close" : "See Full List of Skills"}
-      </StyledButton>
+      <StyledButtonContainer>
+        <StyledButton
+          onClick={() => {
+            setOpen(!open)
+          }}
+        >
+          {open ? "Close" : "See Full List of Skills"}
+        </StyledButton>
+        <a href={resume} target="_blank">
+          <StyledButton>View Résumé</StyledButton>
+        </a>
+      </StyledButtonContainer>
 
       {open && (
         <StyledContainer>
@@ -320,6 +333,24 @@ export default function FullSkills() {
                   </svg>
 
                   <p>GatsbyJs</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <svg
+                    viewBox="0 0 600 600"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0 300V600H300H600V300V0H300H0V300ZM487.659 278.165C493.246 280.079 500.421 283.188 503.603 285.073C510.517 289.169 523.972 302.296 529.396 310.237C532.817 315.246 533.123 316.147 531.901 317.619C529.826 320.119 493.175 344.227 492.044 343.836C491.507 343.651 488.912 340.82 486.277 337.545C477.225 326.296 468.93 322 456.261 322C445.835 322 441.211 323.659 435.377 329.492C431.23 333.64 430.031 335.627 429.123 339.861C427.677 346.603 427.704 347.641 429.477 353.612C432.569 364.022 440.134 369.72 466.505 381.501C521.236 405.952 537.03 418.83 546.202 446.485C550.157 458.408 551.173 477.032 548.579 490.037C543.243 516.791 523.888 536.562 494.394 545.384C480.686 549.484 472.699 550.316 452.773 549.722C437.411 549.263 433.066 548.776 425.5 546.662C397.87 538.941 377.577 525.137 363.985 504.816C360.693 499.895 358 495.504 358 495.057C358 493.76 359.492 492.797 379 481.505C389.175 475.615 398.474 470.182 399.665 469.431C401.708 468.142 402.172 468.498 407.953 475.783C422.527 494.151 435.938 501.223 456.5 501.386C473.645 501.521 487.435 495.232 492.78 484.841C496.339 477.923 496.175 467.929 492.389 460.974C487.815 452.569 480.656 448.025 451 434.698C428.989 424.806 418.876 419.68 410.658 414.247C395.837 404.449 385.635 392.283 379.123 376.641C373.524 363.192 372.937 337.923 377.894 323.725C386.228 299.85 403.855 283.757 429.586 276.533C437.956 274.184 439.69 274.051 458 274.358C477.261 274.68 477.625 274.727 487.659 278.165ZM342 300.988V324.977L303.25 325.238L264.5 325.5L264.246 436.25L263.991 547H236.996H210V436V325H171H132V301V277H237H342V300.988Z"
+                      fill="black"
+                    />
+                  </svg>
+
+                  <p>TypeScript</p>
                 </div>
               </li>
             </ul>
