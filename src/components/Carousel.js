@@ -50,7 +50,8 @@ const StyledDiv = styled.div`
     cursor: pointer;
     user-select: none;
     height: 5rem;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s, transform 0.5s;
+    transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
   }
 
   .right-arrow:hover,
@@ -129,8 +130,7 @@ const StyledLinkContainer = styled.div`
     background: hsl(238, 80%, 14%);
     width: 100%;
     border-radius: 5px;
-    transition: opacity 0.5s, transform 0.5s;
-    transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   a:hover {
     cursor: pointer;
