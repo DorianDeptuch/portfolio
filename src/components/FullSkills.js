@@ -22,13 +22,13 @@ const StyledButton = styled.button`
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.25s, transform 0.25s;
   transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
 
   &:hover {
     cursor: pointer;
     opacity: 70%;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   @media only screen and ${device.tablet} {
@@ -151,9 +151,11 @@ const StyledListContainer = styled.div`
 `
 
 const StyledButtonContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  justify-content: space-around;
+  ${"" /* gap: 5rem; */}
 `
 
 export default function FullSkills() {

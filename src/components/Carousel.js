@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { device } from "../config/config"
 
@@ -26,12 +26,26 @@ const StyledDiv = styled.div`
   max-width: 100vw;
   height: 100%;
 
+  .imageContainerParent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
   .image {
     border-radius: 10px;
     height: 100%;
     max-width: 100%;
     ${"" /* max-height: 50%; */}
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 1rem;
     display: block;
   }
@@ -50,7 +64,7 @@ const StyledDiv = styled.div`
     cursor: pointer;
     user-select: none;
     height: 5rem;
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.25s, transform 0.25s;
     transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
   }
 
@@ -58,7 +72,7 @@ const StyledDiv = styled.div`
   .left-arrow:hover {
     cursor: pointer;
     opacity: 70%;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   .right-arrow {
@@ -130,13 +144,13 @@ const StyledLinkContainer = styled.div`
     background: hsl(238, 80%, 14%);
     width: 100%;
     border-radius: 5px;
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.25s, transform 0.25s;
+    transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
   }
   a:hover {
     cursor: pointer;
     opacity: 70%;
     transform: scale(1.02);
-    transition-timing-function: cubic-bezier(0.75, -3, 0.25, 4);
   }
   button {
     padding-top: 1rem;
@@ -289,6 +303,9 @@ const SliderData = [
 
 const Carousel = () => {
   const [current, setCurrent] = useState(0)
+  const [height, setHeight] = useState("auto")
+  const [width, setWidth] = useState("auto")
+  const ref = useRef(null)
   const length = SliderData.length
 
   const handleKeyDown = e => {
@@ -310,6 +327,11 @@ const Carousel = () => {
     setCurrent(current === 0 ? length - 1 : current - 1)
   }
 
+  useEffect(() => {
+    setHeight(ref.current.clientHeight)
+    setWidth(ref.current.clientWidth)
+  }, [])
+
   if (!Array.isArray(SliderData) || SliderData.length <= 0) {
     return null
   }
@@ -326,7 +348,6 @@ const Carousel = () => {
         >
           &#10094;
         </div>
-
         {SliderData.map((slide, index) => {
           return (
             <div
@@ -334,8 +355,21 @@ const Carousel = () => {
               key={index}
             >
               {index === current && (
-                <div style={{ height: "auto" }}>
-                  <img src={slide.image} alt="slider.title" className="image" />
+                <div
+                  style={{ height: "auto" }}
+                  className="imageContainerParent"
+                >
+                  <div
+                    style={{ height: height, width: width }}
+                    className="imageContainer"
+                  >
+                    <img
+                      src={slide.image}
+                      alt="slider.title"
+                      className="image"
+                      ref={ref}
+                    />
+                  </div>
                   <div className="contentContainer">
                     <StyledTitleContainer>
                       <div

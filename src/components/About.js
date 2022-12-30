@@ -36,8 +36,9 @@ const StyledDiv = styled.div`
 
   p {
     color: hsl(184, 74%, 44%);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
+    text-align: justify;
   }
 
   @media only screen and ${device.tablet} {
@@ -86,9 +87,14 @@ export default function About() {
                 style={{ width: "100%", padding: "2rem" }}
               >
                 <p>
-                  What happens when an outdoor-loving climber takes his problem
-                  solving skills and puts them to use in the realm of Computer
-                  Science? Scroll to find out!
+                  I am a Web Developer with a background in Physical Therapy.
+                  After several years helping patients recover from injuries, I
+                  have decided to pursue my love of technology full-time. I have
+                  built a strong foundation in HTML/CSS, JavaScript, and React
+                  and I stay up-to-date on the latest web dev trends and
+                  technologies. I am excited to continue growing and learning in
+                  the field, always looking for new challenges and opportunities
+                  to make a positive impact.
                 </p>
                 <Skills />
               </div>
