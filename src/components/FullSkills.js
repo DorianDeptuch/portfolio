@@ -167,7 +167,10 @@ export default function FullSkills() {
             setOpen(!open)
           }}
         >
+<<<<<<< HEAD
           {open ? "Close" : "See Full List of Skills"}
+=======
+          {open ? "Close" : "View Full List of Skills"}
         </StyledButton>
         <a href={resume} target="_blank">
           <StyledButton>View Résumé</StyledButton>
