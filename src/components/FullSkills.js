@@ -167,12 +167,9 @@ export default function FullSkills() {
             setOpen(!open)
           }}
         >
-<<<<<<< HEAD
-          {open ? "Close" : "See Full List of Skills"}
-=======
           {open ? "Close" : "View Full List of Skills"}
         </StyledButton>
-        <a href={resume} target="_blank">
+        <a href={resume} target="_blank" rel="noreferrer">
           <StyledButton>View Résumé</StyledButton>
         </a>
       </StyledButtonContainer>
