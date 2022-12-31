@@ -43,7 +43,7 @@ const StyledDiv = styled.div`
 
   @media only screen and ${device.tablet} {
     p {
-      font-size: 1rem;
+      font-size: 0.65rem;
     }
   }
   @media only screen and (max-width: 600px) {
@@ -94,7 +94,7 @@ export default function About() {
                   and I stay up-to-date on the latest web dev trends and
                   technologies. I am excited to continue growing and learning in
                   the field, always looking for new challenges and opportunities
-                  to make a positive impact.
+                  to make a positive and lasting impact.
                 </p>
                 <Skills />
               </div>

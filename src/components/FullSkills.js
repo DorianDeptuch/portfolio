@@ -35,6 +35,11 @@ const StyledButton = styled.button`
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
+
+  @media only screen and ${device.mobile} {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.75rem;
+  }
 `
 
 const StyledDiv = styled.div`
@@ -42,6 +47,8 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   color: hsl(184, 74%, 44%);
 `
 
@@ -76,11 +83,11 @@ const StyledContainer = styled.div`
     }
   }
   ${
-    "" /* @media only screen and ${device.tablet} {
+    "" /* @media only screen and ${device.mobile} {
     & > div {
       margin: 0;
     }
-  } */
+  }  */
   }
 `
 
