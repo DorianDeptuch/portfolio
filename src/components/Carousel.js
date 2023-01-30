@@ -238,15 +238,15 @@ const StyledTitleContainer = styled.div`
 `
 
 const SliderData = [
-  // {
-  //   title: "Facebook Clone",
-  //   description:
-  //     "Built with NextJS, Express, and MongoDB. This Facebook clone features a comprehensive notification system and GIPHY and YouTube APIs to add some fun to the social media experience.",
-  //   image:
-  //     "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657053808/portfolio%20projects/PeekOdinBook-1_eutbql.gif",
-  //   codeURL: "https://github.com/DorianDeptuch/odin-book",
-  //   liveURL: "",
-  // },
+  {
+    title: "Facebook Clone",
+    description:
+      "Built with NextJS, Express, and MongoDB. This Facebook clone features a comprehensive notification system and GIPHY and YouTube APIs to add some fun to the social media experience.",
+    image:
+      "https://res.cloudinary.com/dsykkv6uh/image/upload/v1657053808/portfolio%20projects/PeekOdinBook-1_eutbql.gif",
+    codeURL: "https://github.com/DorianDeptuch/odin-book",
+    liveURL: "https://odin-book.vercel.app/",
+  },
   {
     title: "Reddit Clone",
     description:
