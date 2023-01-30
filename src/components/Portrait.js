@@ -19,8 +19,8 @@ export default function Portrait() {
       {/* <SquareSVG /> */}
       <StaticImage
         style={{ margin: "2rem", width: "100%" }}
-        src="https://res.cloudinary.com/dsykkv6uh/image/upload/v1657952686/Dorian-photo_gflotg.jpg"
-        alt="self"
+        src="https://res.cloudinary.com/dsykkv6uh/image/upload/v1675052198/Dorian-photo-new_vgd0mz.jpg"
+        alt="Dorian Deptuch headshot"
       />
     </StyledDiv>
   )
