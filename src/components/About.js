@@ -87,14 +87,16 @@ export default function About() {
                 style={{ width: "100%", padding: "2rem" }}
               >
                 <p>
-                  I am a Web Developer with a background in Physical Therapy.
-                  After several years helping patients recover from injuries, I
-                  have decided to pursue my love of technology full-time. I have
-                  built a strong foundation in HTML/CSS, JavaScript, and React
-                  and I stay up-to-date on the latest web dev trends and
-                  technologies. I am excited to continue growing and learning in
-                  the field, always looking for new challenges and opportunities
-                  to make a positive and lasting impact.
+                  I'm a huge believer in challenging myself and always learning
+                  something new. A good word to describe me is "synergistic." I
+                  amplify the strengths in others when I collaborate in a team
+                  setting as we work toward a common goal. I am very adaptable
+                  and can collaborate with a team or work independently as well.
+                  I write clean, efficient, and maintainable code and have been
+                  studying ways to improve my code since I began my programming
+                  journey. My love for programming has been ever-growing and I
+                  am constantly motivated to learn more about the world of
+                  programming and computer science.
                 </p>
                 <Skills />
               </div>

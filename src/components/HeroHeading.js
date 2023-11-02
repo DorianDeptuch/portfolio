@@ -111,7 +111,7 @@ export default function HeroHeading() {
           <DorianDeptuch />
         </div>
         <h5>
-          Full-Stack Web Developer. <wbr /> Based in San Diego, CA.
+          Fullstack Software Engineer. <wbr /> Based in San Diego, CA.
         </h5>
       </div>
     </StyledHeading>
