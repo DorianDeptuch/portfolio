@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { device } from "../config/config"
-import resume from "../../static/Dorian_Deptuch_Resume_Jan2023_4.pdf"
+import resume from "../../static/Resume FS October 2023 (1).pdf"
 
 const FadeInAnimation = keyframes`
 from {
